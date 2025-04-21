@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arijit’s portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="signature.png" type="image/png">
+</head>
+<body>
+  <!-- Top Banner Line -->
+  <div class="banner-line top-banner"></div>
+
+  <!-- Landing Page -->
+  <div id="main-page" class="main">
+    <div class="profile">
+      <img src="my_profile2.png" alt="Profile Picture" class="profile-pic">
+      <h1 class="intro-text">Hey, I am</h1>
+      <h2 class="name">Arijit Choudhury</h2>
+      <h3 class="job-title">Data Analyst</h3>
+      <h4 class="location">London, UK 📍</h4>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+      <button onclick="navigateTo('about')">About Me</button>
+      <button onclick="navigateTo('portfolio')">Portfolio</button>
+      <button onclick="openResume()">Resume</button> <!-- Resume Button -->
+      <button onclick="navigateTo('contact')">Contact Me</button>
+    </div>
+  </div>
+
+  <!-- About Me Section -->
+  <div id="about" class="section hidden">
+    <h2>About Me</h2>
+    <p>
+      As a Data Analyst with over a year of experience, I specialize in managing the full data lifecycle—from streamlining ELT processes to delivering interactive and insightful dashboards. I hold a Master’s degree from the University of Westminster in London, where I honed my analytical skills to tackle complex data challenges.
+    </p> 
+    </p>
+    <p>
+      With a background in Computer Science Engineering, I’m deeply passionate about turning raw data into meaningful insights. I excel at building robust data models, conducting in-depth notebook analyses, and creating dynamic reports and visualizations using tools like Python, SQL, PowerBI, and Tableau to empower decision-making.
+    </p>
+    <p>
+      Outside of work, I’m an avid golfer, video game enthusiast (PlayStation is my go-to), and a strategic chess player. I also love spending time in nature and revisiting timeless 2000s films. These hobbies not only help me recharge but also inspire fresh perspectives and fuel my creativity. 
+    </p>
+    <button class="back-button" onclick="goBack()">Back to Home</button>
+  </div>
+
+  <!-- Portfolio Section -->
+  <div id="portfolio" class="section hidden">
+    <h2>Portfolio</h2>
+    <div class="card-container">
+      <!-- Project 1 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="my-project1.png" alt="Project 1">
+          </div>
+          <div class="card-back">
+            <h3>Spotlight on Traffic Safety: Illuminating Seattle Collision Patterns</h3>
+            <p>This project focuses on developing prevention strategies to reduce accidents and fatalities on Seattle’s roads. Through in-depth analysis of collision data, we identified high-risk areas and key factors like weather, light conditions, and alcohol influence to inform targeted safety measures.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="my-project2.webp" alt="Project 2">
+          </div>
+          <div class="card-back">
+            <h3>RFM segmentation of a grocery store dataset</h3>
+            <p>Conducted RFM (Recency, Frequency, Monetary Value) segmentation analysis on a grocery store dataset. Preprocessed data
+              and applied statistical techniques and machine learning algorithms to cluster customers by purchase behavior. Designed a
+              SQL-based data mart for ongoing analysis, informing targeted marketing strategies to enhance customer lifetime value.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="MY-PROEJCT3.jpg" alt="Project 3">
+          </div>
+          <div class="card-back">
+            <h3>Quantifying Controversy: Analyzing Perceptions of the BMW XM</h3>
+            <p>Analyzed 5,000+ Reddit and YouTube comments through NLP techniques like VADER sentiment modeling and LDA topic
+              analysis; delivered precise recommendations for BMW's XM SUV, improving public perception and aligning design with
+              customer sentiments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="back-button" onclick="goBack()">Back to Home</button>
+  </div>
+
+  <!-- Contact Me Section -->
+  <div id="contact" class="section hidden">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via email!</p>
+    <p>My email is arijitchoudhury.99@gmail.com</p>
+    <button class="back-button" onclick="goBack()">Back to Home</button>
+  </div>
+
+  <!-- Bottom Banner Line -->
+  <div class="banner-line bottom-banner"></div>
+
+  <script>
+    function openResume() {
+      // Open resume link in a new tab
+      window.open('https://drive.google.com/file/d/1TdoMjdgsTb-XSF6G9vurlT_teD1GfM6Z/view?usp=sharing', '_blank'); // Replace with your actual resume URL
+    }
+
+    function navigateTo(sectionId) {
+      // Hide main page
+      document.getElementById('main-page').style.display = 'none';
+      
+      // Hide all other sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Show selected section
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.classList.remove('hidden');
+      selectedSection.style.display = 'flex';
+    }
+
+    function goBack() {
+      // Show main page
+      const mainPage = document.getElementById('main-page');
+      mainPage.style.display = 'flex'; // Show main page
+      
+      // Hide all other sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.add('hidden');
+        section.style.display = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
