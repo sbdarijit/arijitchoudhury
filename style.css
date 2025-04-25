@@ -149,10 +149,9 @@ body {
     gap: 20px; /* Space between the cards */
     flex-wrap: nowrap; /* Prevent wrapping, keep them in one line */
     max-width: 100%; /* Ensure cards don’t exceed the container width */
-    overflow: hidden;/* Hide any overflow if cards get too big */
+    overflow: hidden; /* Hide any overflow if cards get too big */
     margin-top: 120px;
 }
-
 
 .card {
     width: 300px; /* Card width */
@@ -168,12 +167,12 @@ body {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
+    transition: transform 0.6s; /* Smooth flip transition */
     border-radius: 20px;
 }
 
 .card:hover .card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Flip the card when hovered */
 }
 
 .card-front,
@@ -181,40 +180,66 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Ensure backface is hidden */
     padding: 15px; /* Add padding to ensure text doesn't touch edges */
-    box-sizing: border-box; /* Ensure padding is included in element's size */
+    box-sizing: border-box; /* Include padding in element's size */
 }
 
 .card-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Maintain image aspect ratio */
 }
 
 .card-back {
     background-color: #0056b3;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Ensure the back is rotated 180deg */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    justify-content: flex-start; /* Align text from the top */
+    justify-content: flex-start; /* Align content from the top */
     color: #fff;
     overflow: hidden;
-    word-wrap: break-word; /* Ensure text breaks at appropriate places */
-    box-sizing: border-box; /* Ensures padding doesn’t cause overflow */
+    word-wrap: break-word; /* Ensure text breaks appropriately */
+    box-sizing: border-box;
 }
 
 .card-back h3 {
     font-size: 24px; /* Title font size */
     font-weight: bold;
     color: #fff;
-    margin-bottom: 10px; /* Add space below the title */
+    margin-bottom: 10px; /* Space below the title */
 }
 
 .card-back p {
     font-size: 16px;
     line-height: 1.5;
-    margin-top: 0; /* No margin at the top of the paragraph */
+    margin-top: 0; /* No margin at the top */
     flex-grow: 1; /* Allow text to take up remaining space */
-    overflow-y: auto; /* Allow vertical scrolling if needed */
+    overflow-y: auto; /* Scrollable text if needed */
 }
+
+/* Styles for card titles and text to maintain correct display when hovered */
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px; /* Space between title and image */
+    text-align: center;
+}
+
+/* Make sure the title and content are correctly aligned and visible */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff; /* Set background for front side */
+    color: #333;
+}
+
+/* Adjusting the title inside the card */
+.card-title {
+    margin-bottom: 15px; /* Adjust for spacing */
+    text-align: center;
+}
+
